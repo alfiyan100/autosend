@@ -20,7 +20,7 @@ string_session = '1BVtsOH0Bu2hB73LTrUYcRyrrw7UgpAA8J8ajXNbt92Bc5rJP1csb1E20URERM
 default_target_chat_id = '@filebotkep'
 
 # Setup logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname=s - %(message=s')
 logger = logging.getLogger(__name__)
 
 # Inisialisasi client Telethon dengan string session
@@ -77,7 +77,6 @@ async def handler(event):
             # Cek apakah file sudah ada di database
             existing_media = get_all_media()
             if any(media['file_id'] == file_id for media in existing_media):
-                await event.reply("Media ini sudah ada di database.")
                 return
 
             file_date = event.date.strftime('%Y-%m-%d %H:%M:%S')
@@ -191,7 +190,7 @@ async def paste_files(event):
             clear_temp_media()  # Hapus database sementara setelah file ditampilkan
             await event.respond("Database sementara telah dihapus.")
     except Exception as e:
-            await event.respond(f"Gagal menampilkan file. Error: {e}")
+        await event.respond(f"Gagal menampilkan file. Error: {e}")
 
 # Jalankan bot
 async def run_client():
