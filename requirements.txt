@@ -1,6 +1,4 @@
 telethon
 python-telegram-bot
-re
-os
 asyncio
 pytz
